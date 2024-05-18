@@ -73,6 +73,19 @@ async function validateAnswer(question , answer) {
     console.log(text);
     return text;
 }
+async function chat(chat) {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+
+    const prompt = `${chat}`
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    console.log(text);
+    return text;
+}
 
 
 

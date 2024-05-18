@@ -199,3 +199,67 @@ body, html {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
+@keyframes circle-pixels {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+.animate-circle-pixels {
+    animation: circle-pixels 4s infinite linear;
+}
+@keyframes explode {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+.firework-particle {
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    border-radius: 50%;
+    position: absolute;
+    animation: explode 1s ease-out forwards;
+}
+
+/* Add animation delay for each particle */
+.firework-particle:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.firework-particle:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.firework-particle:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Add more particles as needed */
+
+.particle {
+    width: 2px;
+    height: 2px;
+    background-color: #f00;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.line {
+    stroke: #f00;
+    stroke-width: 0.5;
+}
+
