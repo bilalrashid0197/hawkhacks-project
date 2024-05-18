@@ -6,6 +6,7 @@ import About from './scenes/about/index.jsx';
 import Brain from './scenes/brain/index.jsx';
 import Personalize from './scenes/personalize/index.jsx'; // Adjust the import path as necessary
 import Navbar from './components/Navbar'; // Adjust the import path as necessary
+import Forum from './scenes/forum/index.jsx';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/brain" element={<Brain />} />
+          <Route path="/forum" element={<Forum />} />
           <Route path="/about" element={<About />} />
           <Route path="/personalize" element={<Personalize />} />
         </Routes>
