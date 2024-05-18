@@ -16,9 +16,10 @@ const Navbar = () => {
         </div>
         {/* Navigation Items */}
         <div className="flex gap-10 justify-end text-lg text-white">
-          <NavLink className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"} to="/home">Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>About</NavLink>
-          <NavLink to="/forum" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>Forum</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"} to="/home">Home</NavLink>
+          <NavLink to="/about" className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"}>About</NavLink>
+          <NavLink to="/forum" className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"}>Forum</NavLink>
+          <NavLink to="/personalize" className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"}>Personalize</NavLink>
         </div>
       </div>
     </header>
