@@ -4,27 +4,16 @@ Command: npx gltfjsx@6.2.16 public/brain/brain.glb
 */
 import { InstancedUniformsMesh } from 'three-instanced-uniforms-mesh'
 import React, { useLayoutEffect, useRef, useState } from 'react'
+import { extend } from '@react-three/fiber'
 import { useGLTF } from '@react-three/drei'
 import { PerspectiveCamera, BoxGeometry, Color, MathUtils, Object3D, Scene, ShaderMaterial, Vector3, WebGLRenderer } from 'three'
 import { fragmentShader, vertexShader } from './shaders/shaders.js'
 import { instance } from 'three/examples/jsm/nodes/Nodes.js'
 
+extend({ InstancedUniformsMesh })
 export default function Brain(props) {
-  const mountRef = useRef(null);
-  const currentMount = mountRef.current;
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  // Scene setup
-  const threeScene = new Scene();
-  const camera = new PerspectiveCamera(75, windowSize.width / windowSize.height, 0.1, 1000);
-  const renderer = new WebGLRenderer();
-  renderer.setSize(windowSize.width, windowSize.height);
-  if(currentMount){
-    currentMount.appendChild(renderer.domElement);
-  }
+  const containerRef = useRef(null);
+  const container = containerRef.current;
 
   const { nodes, scene, materials } = useGLTF('./brain/brain.glb')
   materials[""].metalness = 0;
@@ -37,7 +26,7 @@ export default function Brain(props) {
     new Color(0xFFF8E3),
     new Color(0xF1F1F1),
     new Color(0xF2EFE5),
-    // new Color(0x7286D3)
+    new Color(0x7286D3),
     new Color(0xFD8A8A)
   ]
 
@@ -55,7 +44,6 @@ export default function Brain(props) {
   })
 
   const instancedMesh = new InstancedUniformsMesh(geometry, material, brain.geometry.attributes.position.count)
-  threeScene.add(instancedMesh)
 
   const dummy = new Object3D()
   const positions = brain.geometry.attributes.position.array

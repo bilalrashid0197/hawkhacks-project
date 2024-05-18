@@ -4,7 +4,7 @@ import '../index.css';
 
 const Navbar = () => {
   return (
-      <header className="mb-8">
+      <header className="">
         <div className="flex justify-between items-center px-0 py-1000">
           {/* TITLE */}
           <div className="flex justify-left-align">
