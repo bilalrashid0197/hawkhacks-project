@@ -1,11 +1,16 @@
-import React from 'react'
-import Experience from './components/experience'
+import React, { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import Brain from './components/Brain'
 
 export default function BrainApp() {
   return (
     <Canvas>
-        <Experience />
+        <ambientLight/>
+        <OrbitControls enableRotate={true}/>
+        <Suspense fallback={null}>
+            <Brain />
+        </Suspense>
     </Canvas>
   )
 }

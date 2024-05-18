@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 h1 {
     background-color: #000000;
@@ -20,7 +21,8 @@ h1 {
 
 /* index.css */
 body, html {
-    background-color: #000000; /* Set the background color for the entire page */
+    /* Set the background color for the entire page */
+    /* background-color: #000000;  */
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
     width: 100%;
@@ -197,10 +199,6 @@ body, html {
 
 .learn-submit:hover {
     background-color: #0056b3; /* Darker blue on hover */
-}
-
-body {
-    background-color: #373845;
 }
 
 body, html {
