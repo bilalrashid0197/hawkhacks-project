@@ -5,3 +5,83 @@
 body {
     background-color: #373845;
 }
+/* Add this CSS to your stylesheet */
+@keyframes glow-vibrant {
+    0% { text-shadow: 0 0 10px #00FF00; }
+    50% { text-shadow: 0 0 20px #00FF00; }
+    100% { text-shadow: 0 0 10px #00FF00; }
+}
+
+.glow-vibrant-animation {
+    animation: glow-vibrant 2s ease-in-out infinite alternate;
+}
+
+/* Add this CSS to your stylesheet */
+.shining-text {
+    background: linear-gradient(90deg, #fff, #ffcc00, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 1s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+    0% { background-position: -100%; }
+    100% { background-position: 200%; }
+}
+
+/* Appropriate styles for the active link */
+.active-link {
+    color: green;
+    font-weight: bold;
+}
+
+/* Styles for all navigation links */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: lightgreen; /* Adjust the color as desired */
+}
+
+/* Style for the logo image */
+.logo-image {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Animation for the logo image */
+.logo-image:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+/* index.css */
+/* Navbar */
+.header {
+    padding: 1px 1px; /* Adjust the padding on the top and sides */
+}
+
+.logo-image {
+    width: 100px; /* Adjust the width of the logo image */
+    height: auto;
+}
+
+.nav-link {
+    color: #fff; /* Set the color of the navigation links */
+    font-size: 18px; /* Set the font size of the navigation links */
+    text-decoration: none; /* Remove underline from the navigation links */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Add underline on hover for the navigation links */
+}
+
+.active-link {
+    font-weight: bold; /* Set bold font weight for the active navigation link */
+}
+
+

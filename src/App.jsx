@@ -10,8 +10,8 @@ import Forum from './scenes/forum/index.jsx';
 
 function App() {
   return (
-    <>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -21,7 +21,6 @@ function App() {
           <Route path="/personalize" element={<Personalize />} />
         </Routes>
       </BrowserRouter>
-    </>
   );
 }
 

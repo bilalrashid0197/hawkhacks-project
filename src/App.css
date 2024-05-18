@@ -68,3 +68,6 @@ header .flex > a:last-child {
   margin-right: 0; /* No margin for the last item */
 }
 
+.specialdiv{
+  text-align: left;
+}
