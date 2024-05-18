@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const activeStyle = {
-    color: 'green', // Change color based on your design preferences
+    color: 'green', 
     fontWeight: 'bold'
   };
   return (
@@ -20,6 +20,7 @@ const Navbar = () => {
           <NavLink to="/about" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>About</NavLink>
           <NavLink to="/forum" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>Forum</NavLink>
           <NavLink to="/brain" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>Brain</NavLink>
+          <NavLink to="/personalize" className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"}>Personalize</NavLink>
         </div>
       </div>
     </header>
