@@ -2,7 +2,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Navbar = () => {
   const activeStyle = {
-    color: 'green', // Change color based on your design preferences
+    color: 'green', 
     fontWeight: 'bold'
   };
   return (
