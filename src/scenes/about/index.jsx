@@ -22,7 +22,7 @@ const hackers = [
     }
   },
   {
-    name: 'Ricky Tren',
+    name: 'Ricky Tran',
     description: 'Frontend wizard with a love for design and user experience. Skilled in React, Tailwind CSS, and creating beautiful web interfaces.',
     avatar: 'https://via.placeholder.com/150', 
     socials: {

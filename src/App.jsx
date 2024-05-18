@@ -18,7 +18,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/brain" element={<Brain />} />
           <Route path="/forum" element={<Forum />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/team" element={<About />} />
             <Route path="/learn" element={<Learn
             topicName={'Calculus'}
             highLevelOverview={'Calculus is a branch of mathematics that deals with the study of rates of change and accumulation of quantities. It consists of two main branches: differential calculus and integral calculus.\n' +
