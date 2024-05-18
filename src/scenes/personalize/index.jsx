@@ -22,9 +22,7 @@ const Personalize = () => {
   return (
       <div className="min-h-screen flex flex-col justify-start text-white" >
 
-        <br />
-        <br />
-        <br />
+
 
         <div className="flex flex-col text-left w-full max-w-md p-5 specialdiv">
           <form onSubmit={handleSubmit} className="p-8 w-full">
