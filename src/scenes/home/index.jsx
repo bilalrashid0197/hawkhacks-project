@@ -6,7 +6,7 @@ import brainGif from '../../assets/giphy.gif'
 
 const Home = () => {
   return (
-    <div className="">
+    <div classNameName="">
       <section>
         <section className="sticky">
 
