@@ -1,4 +1,4 @@
-
+//npm install @google/generative-ai
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
@@ -37,7 +37,7 @@ async function populate( Topic ,  Mindset , LearningStyle ) {
 
 async function VideoQuiz(link) {
     // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemni"});
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 
     const prompt = `${link} generate me a list of ten questions based on the video link i provided  in a comma seperated format for example (question:answer , question:answer)`
@@ -47,12 +47,12 @@ async function VideoQuiz(link) {
     const text = response.text();
     console.log(text);
 }
-async function Quiz(Topic) {
+async function Quiz(topic) {
     // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemni"});
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
 
-    const prompt = `This is  my topic ${topic}  generate me a list of questions and answers`
+    const prompt = `This is  my topic ${topic} generate me a list of questions and answers in a comma seperated list`
 
     const result = await model.generateContent(prompt);
     const response = await result.response;
@@ -60,7 +60,23 @@ async function Quiz(Topic) {
     console.log(text);
 }
 
-topics(Name , Mindset ,LearningStyle, Language, Conditions)
+async function validateAnswer(question , answer) {
+    // For text-only input, use the gemini-pro model
+    const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+
+
+    const prompt = `determine is ${answer} is a valid response to the question: ${question} return either 'True' or 'False'`
+
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    console.log(text);
+    return text;
+}
+
+
+
+
 
 
 

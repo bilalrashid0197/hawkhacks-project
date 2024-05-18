@@ -1,30 +1,28 @@
 import { NavLink, Link } from 'react-router-dom';
+import BrainImage from '../../src/assets/img.png';
+import '../index.css';
 
 const Navbar = () => {
-  const activeStyle = {
-    color: 'green', 
-    fontWeight: 'bold'
-  };
   return (
-    <header className="mb-5 ">
-      <div className="flex justify-between items-end px-5 pt-5 pb-1">
-        {/* TITLE */}
-        <div className="font-bold text-2xl text-white">
-          <Link to ="/">
-            <p className="align-bottom">Brain Matter</p>
-          </Link>
+      <header className="mb-8">
+        <div className="flex justify-between items-center px-0 py-1000">
+          {/* TITLE */}
+          <div className="flex justify-left-align">
+            <Link to="/" className="flex items-center">
+              <img src={BrainImage} alt="Brain Logo" className="logo-image" />
+              <p className="ml-4 text-3xl font-bold text-white">Brain Matter</p>
+            </Link>
+          </div>
+          {/* Navigation Items */}
+          <div className="flex gap-8 items-center">
+            <NavLink exact to="/" activeClassName="active-link" className="nav-link">Home</NavLink>
+            <NavLink to="/about" activeClassName="active-link" className="nav-link">About</NavLink>
+            <NavLink to="/forum" activeClassName="active-link" className="nav-link">Forum</NavLink>
+            <NavLink to="/personalize" activeClassName="active-link" className="nav-link">Personalize</NavLink>
+          </div>
         </div>
-        {/* Navigation Items */}
-        <div className="flex gap-10 justify-end text-lg text-white">
-          <NavLink className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"} to="/home">Home</NavLink>
-          <NavLink to="/about" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>About</NavLink>
-          <NavLink to="/forum" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>Forum</NavLink>
-          <NavLink to="/brain" className={({ isActive }) => isActive ? "text-green-500 font-bold hover:underline" : "hover:underline"}>Brain</NavLink>
-          <NavLink to="/personalize" className={({ isActive }) => isActive ? "text-white font-bold hover:underline" : "hover:underline"}>Personalize</NavLink>
-        </div>
-      </div>
-    </header>
-  )
+      </header>
+  );
 };
 
 export default Navbar;

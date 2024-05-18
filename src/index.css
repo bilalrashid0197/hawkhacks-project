@@ -1,6 +1,203 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+h1 {
+    background-color: #000000;
+    font-family: 'Bungee', cursive;
+}
+
+.text-3d {
+    color: #fff;
+    text-shadow: 2px 2px 0 #000,
+    4px 4px 0 #000,
+    6px 6px 0 #000,
+    8px 8px 0 #000,
+    10px 10px 0 #000;
+}
+
+
+/* index.css */
+body, html {
+    background-color: #000000; /* Set the background color for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+#root {
+    min-height: 100vh; /* Ensure the root element takes at least the full viewport height */
+}
+
+/* Add this CSS to your stylesheet */
+@keyframes glow-vibrant {
+    0% { text-shadow: 0 0 10px #00FF00; }
+    50% { text-shadow: 0 0 20px #00FF00; }
+    100% { text-shadow: 0 0 10px #00FF00; }
+}
+
+.glow-vibrant-animation {
+    animation: glow-vibrant 2s ease-in-out infinite alternate;
+}
+
+/* Add this CSS to your stylesheet */
+.shining-text {
+    background: linear-gradient(90deg, #fff, #ffcc00, #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 1s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+    0% { background-position: -100%; }
+    100% { background-position: 200%; }
+}
+
+/* Appropriate styles for the active link */
+.active-link {
+    color: green;
+    font-weight: bold;
+}
+
+/* Styles for all navigation links */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: lightgreen; /* Adjust the color as desired */
+}
+
+/* Style for the logo image */
+.logo-image {
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Animation for the logo image */
+.logo-image:hover {
+    transform: scale(1.1); /* Increase size on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+/* index.css */
+/* Navbar */
+.header {
+    padding: 1px 1px; /* Adjust the padding on the top and sides */
+}
+
+.logo-image {
+    width: 100px; /* Adjust the width of the logo image */
+    height: auto;
+}
+
+.nav-link {
+    color: #fff; /* Set the color of the navigation links */
+    font-size: 18px; /* Set the font size of the navigation links */
+    text-decoration: none; /* Remove underline from the navigation links */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Add underline on hover for the navigation links */
+}
+
+.active-link {
+    font-weight: bold; /* Set bold font weight for the active navigation link */
+}
+
+
+.mouse-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+}
+.shining-text {
+    background: linear-gradient(45deg, #ffcc00, #ff0066, #0000ff, #ff0066, #ffcc00);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 10s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+/* Assuming your index.css is properly set up, add these styles at the end */
+
+/* Learn Component Styles */
+.learn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #000000; /* Light gray background */
+}
+
+.learn-form {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(13, 13, 136, 0.89); /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.learn-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333; /* Dark gray text color */
+    text-align: center;
+}
+
+.learn-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white; /* Gray text color */
+}
+
+.learn-video {
+    margin-bottom: 1rem;
+}
+
+.learn-quiz {
+    margin-bottom: 1rem;
+}
+
+.learn-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #082d54; /* Blue submit button */
+    color: #fff; /* White text color */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
 body {
     background-color: #373845;
