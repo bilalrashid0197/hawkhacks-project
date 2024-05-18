@@ -23,7 +23,7 @@ const Personalize = () => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row justify-between items-center text-white  p-5">
       <div className="flex flex-col text-left w-full max-w-md p-5 specialdiv">
-        <form onSubmit={handleSubmit} className="p-8 w-full bg-gray-800 rounded-lg shadow-lg">
+        <form onSubmit={handleSubmit} className="p-8 w-full  rounded-lg shadow-lg">
           <h1 className="text-3xl font-bold mb-6 text-center shining-text">Personalize Your Experience</h1>
           <div className="mb-4">
             <label className="block text-sm font-semibold mb-2" htmlFor="name">

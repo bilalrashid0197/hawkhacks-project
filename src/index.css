@@ -1,10 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
-body {
-    background-color: #373845;
+h1 {
+    background-color: #000000;
+    font-family: 'Bungee', cursive;
 }
+
+.text-3d {
+    color: #fff;
+    text-shadow: 2px 2px 0 #000,
+    4px 4px 0 #000,
+    6px 6px 0 #000,
+    8px 8px 0 #000,
+    10px 10px 0 #000;
+}
+
+
+/* index.css */
+body, html {
+    background-color: #000000; /* Set the background color for the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+#root {
+    min-height: 100vh; /* Ensure the root element takes at least the full viewport height */
+}
+
 /* Add this CSS to your stylesheet */
 @keyframes glow-vibrant {
     0% { text-shadow: 0 0 10px #00FF00; }
@@ -84,4 +111,91 @@ body {
     font-weight: bold; /* Set bold font weight for the active navigation link */
 }
 
+
+.mouse-follower {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease-out;
+}
+.shining-text {
+    background: linear-gradient(45deg, #ffcc00, #ff0066, #0000ff, #ff0066, #ffcc00);
+    background-size: 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 10s infinite;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+/* Assuming your index.css is properly set up, add these styles at the end */
+
+/* Learn Component Styles */
+.learn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #000000; /* Light gray background */
+}
+
+.learn-form {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(13, 13, 136, 0.89); /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.learn-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333; /* Dark gray text color */
+    text-align: center;
+}
+
+.learn-text {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: white; /* Gray text color */
+}
+
+.learn-video {
+    margin-bottom: 1rem;
+}
+
+.learn-quiz {
+    margin-bottom: 1rem;
+}
+
+.learn-submit {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #082d54; /* Blue submit button */
+    color: #fff; /* White text color */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.learn-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
 
