@@ -13,6 +13,7 @@ export default function Popup({visible, togglePopup}) {
     const ageRef = useRef(null);
     const emailRef = useRef(null);
     const aboutRef = useRef(null);
+    const skillsRef = useRef(null);
     const additionalRef = useRef(null);
     
     const handleChange = (e) => {
@@ -59,6 +60,10 @@ export default function Popup({visible, togglePopup}) {
             <div className="mb-6">
                 <label htmlFor="about_them" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">About You</label>
                 <input onChange={handleChange} ref={aboutRef} name="about" type="text" id="about" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="In 1-2 sentences, tell us more about you!" required/>
+            </div>
+            <div className="mb-6">
+                <label htmlFor="skills" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Skills (no spaces, comma separated)</label>
+                <input onChange={handleChange} ref={aboutRef} name="skills" type="text" id="skills" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="In 1-2 sentences, tell us more about you!" required/>
             </div> 
             <div className="mb-6">
                 <label htmlFor="additional_info" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Additional Notes</label>
