@@ -1,25 +1,28 @@
 import React from 'react';
 import Ricky from '../../assets/ricky.png'
+import Zaid from '../../assets/Zaid.jpeg'
+import Bilal from '../../assets/Bilal.jpeg'
+import Nirek from '../../assets/Nirek.jpeg'
 
 const hackers = [
   {
     name: 'Zaid Dahir',
     description: 'Full-stack developer with a passion for cybersecurity and ethical hacking. Known for her expertise in JavaScript and Python.',
-    avatar: 'https://via.placeholder.com/150', 
+    avatar: Zaid, 
     socials: {
       instagram: 'https://instagram.com/zaiddahir',
       linkedin: 'https://www.linkedin.com/in/zaiddahir/',
-      github: 'https://github.com/zaiddahir'
+      github: 'https://github.com/zdahir'
     }
   },
   {
     name: 'Bilal Rashid',
     description: 'Backend engineer and database specialist. Expert in SQL and NoSQL databases, with a knack for optimizing server performance.',
-    avatar: 'https://via.placeholder.com/150', 
+    avatar: Bilal, 
     socials: {
       instagram: 'https://instagram.com/bilalrashid',
-      linkedin: 'https://www.linkedin.com/in/bilalrashid/',
-      github: 'https://github.com/bilalrashid'
+      linkedin: 'https://www.linkedin.com/in/bilal-rashid-a04625198/',
+      github: 'https://github.com/bilalrashid0197'
     }
   },
   {
@@ -27,19 +30,19 @@ const hackers = [
     description: 'Frontend wizard with a love for design and user experience. Skilled in React, Tailwind CSS, and creating beautiful web interfaces.',
     avatar: Ricky, 
     socials: {
-      instagram: 'https://instagram.com/rickytren',
-      linkedin: 'https://www.linkedin.com/in/rickytren/',
-      github: 'https://github.com/rickytren'
+      instagram: 'https://www.instagram.com/rickytran21/',
+      linkedin: 'https://www.linkedin.com/in/ricky-tran-cs/',
+      github: 'https://github.com/rickycse/rickycse'
     }
   },
   {
     name: 'Nirek',
     description: 'DevOps guru and cloud enthusiast. Experienced in CI/CD, containerization, and automating infrastructure with tools like Docker and Kubernetes.',
-    avatar: 'https://via.placeholder.com/150', 
+    avatar: Nirek, 
     socials: {
-      instagram: 'https://instagram.com/nirek',
-      linkedin: 'https://www.linkedin.com/in/nirek/',
-      github: 'https://github.com/nirek'
+      instagram: 'https://www.instagram.com/nirek1306/',
+      linkedin: 'https://www.instagram.com/nirek1306/',
+      github: 'https://www.linkedin.com/in/nirek-shetty-a9a7322b5/'
     }
   },
 ];
