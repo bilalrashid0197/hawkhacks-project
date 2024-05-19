@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BrainImage from '../../assets/img.png';
 import '../../index.css'; // Make sure your CSS file is imported
 import NeetCode from '../../assets/neetcode.jpg';
@@ -9,69 +9,138 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 // Access your API key (see "Set up your API key" above)
 const genAI = new GoogleGenerativeAI('AIzaSyBelNC78JHbK2szV_V6ErVusxd0SbeSrE4');
 
-const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
+const Learn = ({ topicName }) => {
   const [visible, setVisible] = useState(true);
   const [chatLogs, setChatLogs] = useState([
   ]);
   const [userMessage, setUserMessage] = useState('');
+  const [youtubeLink, setYoutubeLink] = useState('');
+  const [highLevelOverview, setHighLevelOverview] = useState('');
+
+  useEffect(() => {
+    const fetchContent = async () => {
+      const ytLink = await populateYT();
+      setYoutubeLink(ytLink);
+      const hlo = await populateHLO();
+      setHighLevelOverview(hlo);
+    };
+    fetchContent();
+  }, [topicName]);
 
   const togglePopup = () => {
-    setVisible(!visible);
+
+    setVisible(visible);
   };
 
   const chatBotContainer = (chatBotMessageSpan) => (
-    <div className="chat-message">
-      <div className="flex items-end">
-        <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
-          {chatBotMessageSpan}
+      <div className="chat-message">
+        <div className="flex items-end">
+          <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
+            {chatBotMessageSpan}
+          </div>
+          <img src={NeetCode} alt="My profile" className="w-6 h-6 rounded-full order-1" />
         </div>
-        <img src={NeetCode} alt="My profile" className="w-6 h-6 rounded-full order-1" />
       </div>
-    </div>
   );
 
   const chatBotMessageSpan = (text) => (
-    <div>
-      <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">{text}</span>
-    </div>
+      <div>
+        <span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">{text}</span>
+      </div>
   );
 
   const userContainer = (userMessageSpan) => (
-    <div className="chat-message">
-      <div className="flex items-end justify-end">
-        <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
-          {userMessageSpan}
+      <div className="chat-message">
+        <div className="flex items-end justify-end">
+          <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
+            {userMessageSpan}
+          </div>
+          <img src={Pepe} alt="My profile" className="w-6 h-6 rounded-full order-1" />
         </div>
-        <img src={Pepe} alt="My profile" className="w-6 h-6 rounded-full order-1" />
       </div>
-    </div>
   );
 
   const userMessageSpan = (text) => (
-    <div>
-      <span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white">{text}</span>
-    </div>
+      <div>
+        <span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white">{text}</span>
+      </div>
   );
 
   const handleSendMessage = async () => {
     if (userMessage.trim() === '') return;
 
     // Add user message to chat log
-    setChatLogs([...chatLogs, [userMessage, "User"]]);
+    setChatLogs((prevLogs) => [...prevLogs, [userMessage, "User"]]);
 
     // Call talk function and get response
     const response = await talk(userMessage);
 
     // Add bot response to chat log
-    setChatLogs([...chatLogs, [userMessage, "User"], [response, "Gemini"]]);
+    setChatLogs((prevLogs) => [...prevLogs, [userMessage, "User"], [response, "Gemini"]]);
 
     // Clear user message input
     setUserMessage('');
   };
 
+  const SendMessage = async () => {
+    if (userMessage.trim() === '') return;
+
+    // Add user message to chat log
+    setChatLogs((prevLogs) => [...prevLogs, [userMessage, "User"]]);
+
+    // Call talk function and get response
+    const response = await talk(userMessage);
+
+    // Add bot response to chat log
+    setChatLogs((prevLogs) => [...prevLogs, [userMessage, "User"], [response, "Gemini"]]);
+
+    // Clear user message input
+    setUserMessage('');
+  };
+
+  const GeminiQuiz = async () => {
+    const answers = [];
+    const questionsArray = [];
+
+    for (let i = 0; i < 5; i++) {
+      const question = await talk(`There are 5 levels of questions from 1 being the easiest to 5 the hardest. We are currently at level ${i + 1}. Give me a tough question at that level which has to do with ${topicName}.`);
+
+      // Append question to chat log
+      setChatLogs((prevLogs) => [...prevLogs, [question, "Gemini"]]);
+      questionsArray.push(question);
+
+      // Wait for user response
+      const userResponse = await getUserResponse();
+      answers.push(userResponse);
+
+      // Add user response to chat log
+      setChatLogs((prevLogs) => [...prevLogs, [userResponse, "User"]]);
+      console.log()
+    }
+
+    // Evaluate the answers
+    const evaluation = await talk(`Evaluate the following answers ${answers} to the questions ${questionsArray}. Return a single number of how many answers are adequate.`);
+
+    // Add evaluation to chat log
+    setChatLogs((prevLogs) => [...prevLogs, [`You got ${evaluation} out of ${questionsArray.length} correct.`, "Gemini"]]);
+  };
+
+  // Function to get user response (replace with your implementation)
+  const getUserResponse = async () => {
+    // Simulate waiting for user input by returning a Promise that resolves with user input after a timeout
+    return new Promise((resolve) => {
+      // Simulate waiting for user input by using setTimeout
+      setTimeout(() => {
+        // For demonstration purposes, let's assume the user input is "User's response"
+        let userInput = userMessage;
+        console.log(userInput);
+        resolve(userInput);
+      }, 20000); // Adjust the timeout value as needed
+    });
+  };
   const talk = async (question) => {
     // For text-only input, use the gemini-pro model
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
     const prompt = `${question}`;
 
     const result = await model.generateContent(prompt);
@@ -79,6 +148,17 @@ const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
     const text = await response.text();
     console.log(text);
     return text;
+  };
+
+  const populateYT = async () => {
+    const link = await talk(`Return the Embed url of a YouTube video good for the topic of ${topicName}`);
+    return link;
+    consol
+  };
+
+  const populateHLO = async () => {
+    const hlo = await talk(`Return a high level overview of ${topicName}`);
+    return hlo;
   };
 
   return (
@@ -173,3 +253,4 @@ const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
 };
 
 export default Learn;
+
