@@ -19,6 +19,7 @@ function App() {
           <Route path="/brain" element={<Brain />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/team" element={<About />} />
+          <Route path="/send-tokens" element={<Personalize />} /> 
             <Route path="/learn" element={<Learn
             topicName={'Calculus'}
             highLevelOverview={'Calculus is a branch of mathematics that deals with the study of rates of change and accumulation of quantities. It consists of two main branches: differential calculus and integral calculus.\n' +
@@ -31,7 +32,6 @@ function App() {
             youtubeLink={'https://www.youtube.com/embed/HfACrKJ_Y2w\n'}
 
             />} />
-          <Route path="/personalize" element={<Personalize />} />
         </Routes>
       </BrowserRouter>
   );
