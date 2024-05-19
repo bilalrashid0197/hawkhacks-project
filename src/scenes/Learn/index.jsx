@@ -3,6 +3,10 @@ import BrainImage from '../../assets/img.png';
 import '../../index.css'; // Make sure your CSS file is imported
 import NeetCode from '../../assets/neetcode.jpg'
 import Pepe from '../../assets/pepe.png'
+import { BiChat } from "react-icons/bi";
+import { FaRegUser } from "react-icons/fa";
+
+
 
 const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
   const [name, setName] = useState('');
@@ -39,13 +43,13 @@ const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
                    <circle cx="8" cy="8" r="8" fill="currentColor"></circle>
                 </svg>
              </span>
-          <img src={NeetCode} alt="" className="w-10 sm:w-16 h-10 sm:h-16 rounded-full"/>
+             <BiChat className="w-14 sm:w-14 h-10 sm:h-10 rounded-full" />
           </div>
           <div className="flex flex-col leading-tight">
              <div className="text-2xl mt-1 flex items-center">
-                <span className="text-gray-700 mr-3">!NeetCode</span>
+                <span className="text-gray-700 mr-3">Quiz Master</span>
              </div>
-             <span className="text-lg text-gray-600">Ex-Senior Software Engineer @ Google</span>
+             <span className="text-lg text-gray-600">Ace quizzes, earn tokens, unlock your potential!</span>
           </div>
        </div>
        <div className="flex items-center space-x-2">
@@ -72,7 +76,7 @@ const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
              <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-2 items-start">
                 <div><span className="px-4 py-2 rounded-lg inline-block rounded-bl-none bg-gray-300 text-gray-600">Can be verified on any platform using docker</span></div>
              </div>
-             <img src={NeetCode} alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+             <BiChat className="w-14 sm:w-14 h-10 sm:h-10 rounded-full" />
           </div>
        </div>
        <div className="chat-message">
@@ -80,7 +84,7 @@ const Learn = ({ topicName, highLevelOverview, youtubeLink }) => {
              <div className="flex flex-col space-y-2 text-xs max-w-xs mx-2 order-1 items-end">
                 <div><span className="px-4 py-2 rounded-lg inline-block rounded-br-none bg-blue-600 text-white ">Your error message says permission denied, npm global installs must be given root privileges.</span></div>
              </div>
-             <img src={Pepe} alt="My profile" className="w-6 h-6 rounded-full order-1"/>
+             <FaRegUser className="w-6 h-10 rounded-full order-1" />
           </div>
        </div>
     </div>
