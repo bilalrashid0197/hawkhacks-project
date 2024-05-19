@@ -20,8 +20,8 @@ const Personalize = () => {
 
   return (
     <>
-      {/*<SuccessPopup visible={successVisible} togglePopup={toggleSuccess} /> */}
-      <FailedPopup visible={failedVisible} togglePopup={toggleFailed} />
+      <SuccessPopup visible={successVisible} togglePopup={toggleSuccess} />
+      {/*<FailedPopup visible={failedVisible} togglePopup={toggleFailed} /> */}
     </>
   );
 };
