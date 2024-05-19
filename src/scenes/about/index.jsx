@@ -1,4 +1,5 @@
 import React from 'react';
+import Ricky from '../../assets/ricky.png'
 
 const hackers = [
   {
@@ -24,7 +25,7 @@ const hackers = [
   {
     name: 'Ricky Tran',
     description: 'Frontend wizard with a love for design and user experience. Skilled in React, Tailwind CSS, and creating beautiful web interfaces.',
-    avatar: 'https://via.placeholder.com/150', 
+    avatar: Ricky, 
     socials: {
       instagram: 'https://instagram.com/rickytren',
       linkedin: 'https://www.linkedin.com/in/rickytren/',

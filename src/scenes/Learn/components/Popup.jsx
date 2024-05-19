@@ -39,7 +39,7 @@ export default function Popup({visible, togglePopup}) {
     
   return (
     <div>
-        <div className="bg-black opacity-50 top-0 w-full h-full absolute"></div>
+        <div className="bg-black opacity-70 top-0 w-full h-full absolute"></div>
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <form onSubmit={handleSubmit}>
             <div className="grid gap-6 mb-6 lg:grid-cols-2">
